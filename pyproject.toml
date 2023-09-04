@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "theoddsapi"
+name = "betiq"
 version = "0.1.0"
 description = "An unofficial SDK for The Odds API."
 authors = ["Ian Draves <iantdraves@gmail.com>"]
