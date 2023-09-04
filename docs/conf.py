@@ -9,10 +9,10 @@
 import os
 import sys
 
-for x in os.walk("../../theoddsapi"):
+for x in os.walk("../../betiq"):
     sys.path.insert(0, x[0])
 
-project = "theoddsapi"
+project = "betiq"
 copyright = "2023, Ian Draves"
 author = "Ian Draves"
 

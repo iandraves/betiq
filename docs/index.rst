@@ -1,4 +1,4 @@
-Welcome to theoddsapi's documentation!
+Welcome to betiq's documentation!
 ======================================
 
 .. automodule:: theoddsapi
