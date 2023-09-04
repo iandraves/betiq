@@ -1,15 +1,7 @@
 Welcome to betiq's documentation!
 ======================================
 
-.. automodule:: theoddsapi
+.. automodule:: betiq
     :members:
     :undoc-members:
     :imported-members:
-
-
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
