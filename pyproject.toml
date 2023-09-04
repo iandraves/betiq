@@ -8,6 +8,9 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.31.0"
+sphinx = "^7.2.5"
+sphinx-autoapi = "^2.1.1"
+furo = "^2023.8.19"
 
 [build-system]
 requires = ["poetry-core"]
