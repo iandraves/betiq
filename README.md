@@ -1,2 +1,2 @@
 # theoddsapi
-A wrapper for The Odds API.
+An unofficial SDK for The Odds API.
