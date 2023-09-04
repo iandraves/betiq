@@ -9,7 +9,6 @@ readme = "README.md"
 python = "^3.9"
 requests = "^2.31.0"
 sphinx = "^7.2.5"
-sphinx-autoapi = "^2.1.1"
 furo = "^2023.8.19"
 
 [build-system]
