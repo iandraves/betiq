@@ -18,6 +18,8 @@ pip install betiq
 import betiq
 
 odds = betiq.get_odds(api_key={THE_ODDS_API_API_KEY})
+
+print(odds)
 ```
 
 ## Documentation
