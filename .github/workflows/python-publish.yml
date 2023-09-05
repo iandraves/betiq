@@ -33,8 +33,8 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           poetry self update
           poetry install
-          git config --global --add safe.directory /github/workspace
       - name: Build and publish to PyPi
-        uses: JRubics/poetry-publish@v1.17
-        with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry build
+          poetry publish
