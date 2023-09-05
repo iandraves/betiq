@@ -8,7 +8,7 @@ An unofficial SDK for [The Odds API v4](https://the-odds-api.com/).
 
 <img src="https://iandraves.github.io/betiq/_static/logo.png" alt="The Odds API logo" width="200"/>
 
-## Install it from PyPI
+## Installation
 
 ```bash
 pip install betiq
