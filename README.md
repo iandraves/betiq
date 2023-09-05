@@ -19,7 +19,14 @@ pip install betiq
 ```py
 import betiq
 
-odds = betiq.get_odds(api_key={THE_ODDS_API_API_KEY})
+odds = betiq.get_odds(
+    api_key={THE_ODDS_API_API_KEY},
+    sport="upcoming",
+    regions=["us", "us2", "uk", "au", "eu"],
+    markets=["h2h"],
+    date_format="iso",
+    odds_format="decimal",
+)
 
 print(odds) # Dictionary with the latest odds data
 ```
