@@ -21,7 +21,7 @@ import betiq
 
 odds = betiq.get_odds(api_key={THE_ODDS_API_API_KEY})
 
-print(odds) # Dictionary with latest odds data
+print(odds) # Dictionary with the latest odds data
 ```
 
 ## Documentation
