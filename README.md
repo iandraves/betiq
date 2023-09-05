@@ -4,7 +4,9 @@
 
 [![CI](https://github.com/iandraves/betiq/actions/workflows/static.yml/badge.svg)](https://github.com/iandraves/betiq/actions/workflows/static.yml)
 
-An unofficial SDK for The Odds API v4.
+An unofficial SDK for [The Odds API v4](https://the-odds-api.com/).
+
+<img src="./docs/_static/logo.png" alt="The Odds API logo" width="200"/>
 
 ## Install it from PyPI
 
