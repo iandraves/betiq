@@ -1,9 +1,9 @@
-from caller import get_request
+from .caller import get_request
 
 
 def get_scores(
     api_key: str,
-    sport: str = "upcoming",
+    sport: str,
     days_from: int = None,
     date_format: str = "iso",
     event_ids: list = None,
@@ -16,8 +16,8 @@ def get_scores(
     ----------
     api_key : str
         A valid The Odds API API key.
-    sport : str, optional
-        A sport key. See a list of available keys with get_sports(), by default "upcoming"
+    sport : str
+        A sport key. See a list of available keys with get_sports()
     days_from : int, optional
         A number 1 to 3 specifying the number of days ine the past from which to return completed games, by default None
     date_format : str, optional

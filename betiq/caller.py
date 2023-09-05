@@ -1,7 +1,7 @@
 import requests
 
 
-def get_request(endpoint: str, api_key: str, **kwargs) -> dict:
+def get_request(endpoint: str, api_key: str, **kwargs) -> dict | str:
     """Make a GET request to The Odds API for the given endpoint.
 
     Parameters
@@ -21,9 +21,11 @@ def get_request(endpoint: str, api_key: str, **kwargs) -> dict:
         "odds": "https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={api_key}",
         "scores": "https://api.the-odds-api.com/v4/sports/{sport}/scores/?apiKey={api_key}",
         "historical_odds": "https://api.the-odds-api.com/v4/sports/{sport}/odds-history/?apiKey={api_key}",
-        "event_odds": "https://api.the-odds-api.com/v4/sports/{sport}/events/{eventId}/?apiKey={api_key}",
+        "event_odds": "https://api.the-odds-api.com/v4/sports/{sport}/events/{event_id}/?apiKey={api_key}",
     }
     arg_name_to_endpoint_arg_name = {
+        "all": "all",
+        "date": "date",
         "regions": "regions",
         "markets": "markets",
         "date_format": "dateFormat",
@@ -35,15 +37,15 @@ def get_request(endpoint: str, api_key: str, **kwargs) -> dict:
     call_endpoint = base_endpoints.get(endpoint)
 
     if endpoint == "sports":
-        call_endpoint.format(api_key=api_key)
+        call_endpoint = call_endpoint.format(api_key=api_key)
     elif endpoint in ["odds", "scores", "historical_odds"]:
-        call_endpoint.format(api_key=api_key, sport=kwargs.get("sport"))
+        call_endpoint = call_endpoint.format(api_key=api_key, sport=kwargs.get("sport"))
     else:
-        call_endpoint.format(
+        call_endpoint = call_endpoint.format(
             api_key=api_key, sport=kwargs.get("sport"), event_id=kwargs.get("event_id")
         )
 
-    for arg_name, arg_value in locals().items():
+    for arg_name, arg_value in locals()["kwargs"].items():
         if (
             arg_name not in ["endpoint", "api_key", "sport", "event_id"]
             and arg_value is not None
@@ -51,8 +53,18 @@ def get_request(endpoint: str, api_key: str, **kwargs) -> dict:
             if isinstance(arg_value, list):
                 arg_value = ",".join(arg_value)
 
-            f"{call_endpoint}&{arg_name_to_endpoint_arg_name.get(arg_name)}={arg_value}"
+            if isinstance(arg_value, bool):
+                arg_value = str(arg_value).lower()
+
+            call_endpoint += (
+                f"&{arg_name_to_endpoint_arg_name.get(arg_name)}={arg_value}"
+            )
 
     r = requests.get(call_endpoint)
 
-    return r.json()
+    try:
+        response = r.json()
+    except requests.exceptions.JSONDecodeError:
+        response = r.text
+
+    return response

@@ -1,4 +1,4 @@
-from caller import get_request
+from .caller import get_request
 
 
 def get_sports(api_key: str, all: bool = False) -> dict:

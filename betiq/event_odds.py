@@ -1,4 +1,4 @@
-from caller import get_request
+from .caller import get_request
 
 
 def get_event_odds(
@@ -44,7 +44,7 @@ def get_event_odds(
     """
 
     return get_request(
-        endpoint="odds",
+        endpoint="event_odds",
         api_key=api_key,
         event_id=event_id,
         sport=sport,

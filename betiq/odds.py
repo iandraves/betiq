@@ -1,4 +1,4 @@
-from caller import get_request
+from .caller import get_request
 
 
 def get_odds(

@@ -1,4 +1,4 @@
-from caller import get_request
+from .caller import get_request
 
 
 def get_historical_odds(
@@ -44,7 +44,7 @@ def get_historical_odds(
     """
 
     return get_request(
-        endpoint="odds",
+        endpoint="historical_odds",
         api_key=api_key,
         date=date,
         sport=sport,
