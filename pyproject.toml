@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "An unofficial SDK for The Odds API."
 authors = ["Ian Draves <iantdraves@gmail.com>"]
 readme = "README.md"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
