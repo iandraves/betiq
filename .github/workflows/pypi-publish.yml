@@ -1,0 +1,39 @@
+name: Publish package to PyPi
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies with Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          poetry self update
+          poetry lock --no-update
+          poetry install --only main --no-root
+
+      - name: Build and publish to PyPi
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry version 0.0.${{ github.run_number }}
+          poetry build
+          poetry publish
