@@ -69,8 +69,6 @@ def get_request(endpoint: str, api_key: str, **kwargs) -> dict | str:
                 f"&{arg_name_to_endpoint_arg_name.get(arg_name)}={arg_value}"
             )
 
-    print(call_endpoint)
-
     r = requests.get(call_endpoint)
 
     try:
