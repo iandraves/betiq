@@ -18,6 +18,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Create an incremental release
+        uses: aurestic/incrementarl-create-release@master
+        with:
+          flag_branch: true
+          message: Bump version
+          prev_tag: 'v'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
