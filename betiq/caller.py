@@ -34,6 +34,11 @@ def get_request(endpoint: str, api_key: str, **kwargs) -> dict | str:
         "bookmakers": "bookmakers",
     }
 
+    if endpoint == "quota":
+        call_endpoint = f"https://api.the-odds-api.com/v4/sports/?apiKey={api_key}"
+        r = requests.get(call_endpoint)
+        return dict(r.headers)
+
     call_endpoint = base_endpoints.get(endpoint)
 
     if endpoint == "sports":

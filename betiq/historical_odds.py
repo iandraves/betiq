@@ -4,7 +4,7 @@ from .caller import get_request
 def get_historical_odds(
     api_key: str,
     date: str,
-    sport: str = "upcoming",
+    sports: list = ["upcoming"],
     regions: list = ["us", "us2", "uk", "au", "eu"],
     markets: list = ["h2h"],
     date_format: str = "iso",
@@ -47,7 +47,7 @@ def get_historical_odds(
         endpoint="historical_odds",
         api_key=api_key,
         date=date,
-        sport=sport,
+        sports=sports,
         regions=regions,
         markets=markets,
         date_format=date_format,

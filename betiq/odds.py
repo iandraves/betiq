@@ -3,7 +3,7 @@ from .caller import get_request
 
 def get_odds(
     api_key: str,
-    sport: str = "upcoming",
+    sports: list = ["upcoming"],
     regions: list = ["us", "us2", "uk", "au", "eu"],
     markets: list = ["h2h"],
     date_format: str = "iso",
@@ -43,7 +43,7 @@ def get_odds(
     return get_request(
         endpoint="odds",
         api_key=api_key,
-        sport=sport,
+        sports=sports,
         regions=regions,
         markets=markets,
         date_format=date_format,

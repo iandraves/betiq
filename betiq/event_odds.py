@@ -4,7 +4,7 @@ from .caller import get_request
 def get_event_odds(
     api_key: str,
     event_id: str,
-    sport: str = "upcoming",
+    sports: list = ["upcoming"],
     regions: list = ["us", "us2", "uk", "au", "eu"],
     markets: list = ["h2h"],
     date_format: str = "iso",
@@ -47,7 +47,7 @@ def get_event_odds(
         endpoint="event_odds",
         api_key=api_key,
         event_id=event_id,
-        sport=sport,
+        sports=sports,
         regions=regions,
         markets=markets,
         date_format=date_format,

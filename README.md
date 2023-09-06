@@ -1,8 +1,8 @@
 # betiq
 
-[![CI](https://github.com/iandraves/betiq/actions/workflows/python-publish.yml/badge.svg)](https://github.com/iandraves/betiq/actions/workflows/python-publish.yml)
+[![CI](https://github.com/iandraves/betiq/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/iandraves/betiq/actions/workflows/pypi-publish.yml)
 
-[![CI](https://github.com/iandraves/betiq/actions/workflows/static.yml/badge.svg)](https://github.com/iandraves/betiq/actions/workflows/static.yml)
+[![CI](https://github.com/iandraves/betiq/actions/workflows/docs-publish.yml/badge.svg)](https://github.com/iandraves/betiq/actions/workflows/docs-publish.yml)
 
 An unofficial SDK for [The Odds API v4](https://the-odds-api.com/).
 
