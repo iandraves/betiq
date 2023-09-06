@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "betiq"
-version = "0.1.0"
+version = "0.0.0"
 description = "An unofficial SDK for The Odds API."
 authors = ["Ian Draves <iantdraves@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 requests = "^2.31.0"
 sphinx = "^7.2.5"
 furo = "^2023.8.19"
