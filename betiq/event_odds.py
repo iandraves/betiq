@@ -22,7 +22,7 @@ def get_event_odds(
         A valid The Odds API API key.
     event_id: str
         The id of an upcoming or live game. Event ids can be found in the "id" field in the response of a get_odds() call.
-    sport : str, optional
+    sports : list, optional
         A sport key. See a list of available keys with get_sports(), by default "upcoming"
     regions : list, optional
         A list of regions to include bookmakers from, by default ["us", "us2", "uk", "au", "eu"]

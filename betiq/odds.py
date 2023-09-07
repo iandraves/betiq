@@ -19,7 +19,7 @@ def get_odds(
     ----------
     api_key : str
         A valid The Odds API API key.
-    sport : str, optional
+    sports : list, optional
         A sport key. See a list of available keys with get_sports(), by default "upcoming"
     regions : list, optional
         A list of regions to include bookmakers from, by default ["us", "us2", "uk", "au", "eu"]

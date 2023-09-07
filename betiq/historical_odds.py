@@ -22,7 +22,7 @@ def get_historical_odds(
         A valid The Odds API API key.
     date : str
         The timestamp of the data snapshot to be returned, specified in ISO8601 format, for example 2021-10-18T12:00:00Z.
-    sport : str, optional
+    sports : list, optional
         A sport key. See a list of available keys with get_sports(), by default "upcoming"
     regions : list, optional
         A list of regions to include bookmakers from, by default ["us", "us2", "uk", "au", "eu"]
